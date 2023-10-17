@@ -26,7 +26,7 @@ struct AppNavigator: AppNavigatorType {
     
     func configureTabBar(tabBar: UITabBarController) {
         let homeVC = UINavigationController.setUpHomeController()
-        let favouriteVC = FavouriteViewController()
+        let favouriteVC = UINavigationController.setUpFavouriteController()
         homeVC.tabBarItem.image = UIImage(systemName: L10n.homeIcon)
         favouriteVC.tabBarItem.image = UIImage(systemName: L10n.favoriteIcon)
         homeVC.title = L10n.homeTabTitle

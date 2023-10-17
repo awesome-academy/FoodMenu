@@ -10,6 +10,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Add To Favourite List Sucessfully
+  internal static let addToFavouriteList = L10n.tr("Localizable", "addToFavouriteList", fallback: "Add To Favourite List Sucessfully")
   /// calories
   internal static let calories = L10n.tr("Localizable", "calories", fallback: "calories")
   /// categorycellid
@@ -24,6 +26,10 @@ internal enum L10n {
   internal static let favoriteTabTitle = L10n.tr("Localizable", "favoriteTabTitle", fallback: "Favorite")
   /// Favourite
   internal static let favoriteTitle = L10n.tr("Localizable", "favoriteTitle", fallback: "Favourite")
+  /// Favourite Food
+  internal static let favourite = L10n.tr("Localizable", "favourite", fallback: "Favourite Food")
+  /// heart
+  internal static let favouriteIcon = L10n.tr("Localizable", "favouriteIcon", fallback: "heart")
   /// FoodCategory
   internal static let foodCategory = L10n.tr("Localizable", "FoodCategory", fallback: "FoodCategory")
   /// tableviewcellid
@@ -39,6 +45,8 @@ internal enum L10n {
   internal static let homeTitle = L10n.tr("Localizable", "homeTitle", fallback: "Food Menu")
   /// takeoutbag.and.cup.and.straw
   internal static let imageOrder = L10n.tr("Localizable", "imageOrder", fallback: "takeoutbag.and.cup.and.straw")
+  /// heart.fill
+  internal static let inFavouriteIcon = L10n.tr("Localizable", "inFavouriteIcon", fallback: "heart.fill")
   /// The url is invalid, input a valid url
   internal static let invalidUrl = L10n.tr("Localizable", "invalidUrl", fallback: "The url is invalid, input a valid url")
   /// itemcategorycellid
@@ -55,6 +63,8 @@ internal enum L10n {
   internal static let orderSuccess = L10n.tr("Localizable", "orderSuccess", fallback: "Your order has been received 😋😋😋")
   /// Popular
   internal static let popular = L10n.tr("Localizable", "popular", fallback: "Popular")
+  /// Remove To Favourite List Sucessfully
+  internal static let removeToFavouriteList = L10n.tr("Localizable", "removeToFavouriteList", fallback: "Remove To Favourite List Sucessfully")
   /// Invalid response from the server. Please try again.
   internal static let serverError = L10n.tr("Localizable", "serverError", fallback: "Invalid response from the server. Please try again.")
   /// Special

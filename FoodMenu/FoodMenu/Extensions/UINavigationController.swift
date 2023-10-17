@@ -18,4 +18,14 @@ extension UINavigationController {
         viewController.bindViewModel(to: viewModel)
         return UINavigationController(rootViewController: viewController)
     }
+    
+    static func setUpFavouriteController() -> UINavigationController {
+        let viewController = FavouriteViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        let navigator = FavouriteNavigator(navigationController: navigationController)
+        let useCase = FavouriteUseCase()
+        let viewModel = FavouriteViewModel(useCase: useCase, navigator: navigator)
+        viewController.bindViewModel(to: viewModel)
+        return navigationController
+    }
 }

@@ -22,12 +22,17 @@ extension DetailViewModel: ViewModelType {
         let load: Driver<Void>
         let name: Driver<String>
         let orderTrigger: Driver<Void>
+        let saveFavouriteTrigger: Driver<Food>
+        let deleteFavouriteTrigger: Driver<String>
     }
     
     struct Output {
         let food: Driver<Food>
         let isOrder: Driver<Bool>
+        let isFavourite: Driver<Bool>
         let order: Driver<OrderResponse>
+        let saveFavourite: Driver<Void>
+        let deleteFavourite: Driver<Void>
     }
     
     func transform(_ input: Input, disposeBag: DisposeBag) -> Output {
@@ -42,17 +47,37 @@ extension DetailViewModel: ViewModelType {
                     .trackActivity(indicator)
                     .asDriver(onErrorJustReturn: OrderResponse())
             }
-
+        let isFavourite = input.load
+            .flatMapLatest {
+                return self.useCase.checkFavouriteExist(id: food.id)
+                    .asDriver(onErrorDriveWith: .empty())
+            }
+        
+        let saveFavourite = input.saveFavouriteTrigger
+            .flatMapLatest { food in
+                return self.useCase.saveFavourite(food: food)
+                    .asDriver(onErrorDriveWith: .empty())
+            }
+        
+        let deleteFavourite = input.deleteFavouriteTrigger
+            .flatMapLatest { id in
+                return self.useCase.deleteFavourite(id: id)
+                    .asDriver(onErrorDriveWith: .empty())
+            }
+        
         let foodItem = input.load
-        .map { _ in
-            return self.food
-        }
+            .map { _ in
+                return self.food
+            }
         
         
         return Output(
             food: foodItem,
             isOrder: indicator.asDriver(),
-            order: result
+            isFavourite: isFavourite,
+            order: result,
+            saveFavourite: saveFavourite,
+            deleteFavourite: deleteFavourite
         )
     }
 }

@@ -23,8 +23,11 @@
 "orderSuccess" = "Your order has been received 😋😋😋";
 "imageOrder" = "takeoutbag.and.cup.and.straw";
 "orderFood" = "Order Food";
-
-
+"favourite" = "Favourite Food";
+"favouriteIcon" = "heart";
+"inFavouriteIcon" = "heart.fill";
+"addToFavouriteList" = "Add To Favourite List Sucessfully";
+"removeToFavouriteList" = "Remove To Favourite List Sucessfully";
 "categoryCell" = "categorycellid";
 "foodCell" = "tableviewcellid";
 "itemCategoryCell" = "itemcategorycellid";
